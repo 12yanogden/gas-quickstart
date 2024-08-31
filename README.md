@@ -1,22 +1,22 @@
 # Google Apps Script Quickstart Code
 
-### Getting Started
+## Getting Started
 
 **1.** Install npm repositories.
 
-```
+```bash
 npm install
 ```
 
 **2.** Authorize Google clasp.
 
-```
+```bash
 npx clasp login
 ```
 
 **3.** Create a new Google Script with [clasp create](https://github.com/google/clasp?tab=readme-ov-file#create).
 
-```
+```bash
 npx clasp create --type sheets --title "My Project Manager"
 ```
 
@@ -24,7 +24,7 @@ npx clasp create --type sheets --title "My Project Manager"
 
 **5.** Deploy the project
 
-```
+```bash
 npm run deploy
 ```
 
@@ -32,7 +32,7 @@ The `dist` directory contains the bundled code that is pushed to Google Apps Scr
 
 ![Google Apps Script - Setup Development Environment](images/npm-install.gif)
 
-#### Enable JavaScript v8 Runtime
+### Enable JavaScript v8 Runtime
 
 Inside the Google Apps Script editor, select View > Show project manifest to open the `appsscript.json` manifest file in the editor. Add a new `runtimeVersion` field and set the value to `V8`. Save your script.
 
@@ -44,7 +44,7 @@ The `.claspignore` file allows you to specify file and directories that you do n
 
 The default `.claspignore` file in the Apps Script Starter kit will push all the JS and HTML inside the `rootDir` folder and ignore all the other files.
 
-## Using Git with Google Apps Script
+### Using Git with Google Apps Script
 
 ![Google Apps Script - Github](images/github-apps-script.png)
 
@@ -58,7 +58,7 @@ Please read [the tutorial](./FUNCTIONS.md) on how to write custom functions for 
 
 You can run tests with jest using
 
-```
+```bash
 npm run test
 ```
 
@@ -66,14 +66,13 @@ This has limitations:
 
 - You _can_ test code that has no dependencies to Google App Script code, e.g.
 
-```
+```google-app-script
 const hasCpuTime = () => !(Date.now() - START_TIME > ONE_MINUTE * 4);
-
 ```
 
 - You _can not_ test code that has dependencies to Google App Script code, e.g.
 
-```
+```google-app-script
 function notTestable() {
     Logger.log("notTestable"); // <-- Google Apps Script function. Not callable in dev
     SpreadsheetApp.getUi(); // <-- Google Apps Script function. Not callable in dev
@@ -83,9 +82,10 @@ function notTestable() {
 
 Check out [jest 'expects' here](https://jestjs.io/docs/expect)
 
-### Attribution
+## Attribution
+
 This project is based on [app-sscript-starter](https://github.com/labnol/apps-script-starter).
 
-### License
+## License
 
 [MIT License](https://github.com/labnol/gas-quickstart/blob/master/LICENSE) (c) Ryan Ogden
