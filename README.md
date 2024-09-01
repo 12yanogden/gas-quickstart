@@ -17,7 +17,7 @@ npx clasp login
 **3.** Create a new Google Script with [clasp create](https://github.com/google/clasp?tab=readme-ov-file#create).
 
 ```bash
-npx clasp create --type sheets --title "My Project Manager"
+npx clasp create --type sheets --title "My Project"
 ```
 
 **4.** Include the necessary [OAuth Scopes](./scopes.md) in the [appsscript.json](./appsscript.json) file
